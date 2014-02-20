@@ -1,0 +1,55 @@
+\documentclass{article}
+% Margins
+\usepackage[top=1in, bottom=1.5in, left=1.5in, right=1.5in]{geometry}
+% Comments
+\usepackage{verbatim}
+% Smart quotes using " instead of ''
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+% Doublespacing
+\usepackage{setspace}
+\doublespacing
+% Tiny bullets
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+
+\author{Dylan Holmes, Kuangyou Yao, Jonathan K
+}
+\title{Brooks' law}
+\date{February 17$^{th}$, 2009}
+
+\begin{comment}
+- - — - - - - - - - - - - — - - - - - - - - - - — - - - - - - - - - - — - 
+[x] state problem
+[~] state techniques used
+[?] solution found
+
+[x] 100 words or so
+
+[x] standard font and margins
+[x] doublespaced
+- - — - - - - - - - - - - — - - - - - - - - - - — - - - - - - - - - - — - 
+\end{comment}
+
+\begin{document}
+
+\maketitle
+
+
+
+\section*{Abstract}
+According to Brooks' Law, "adding manpower to a late software project makes it late". Brooks' law originated from Fred Brooks' 1975 book, "The Mythical Man-Month", and has since become commonly accepted through out the software development community. The basic reasoning behind the principle is that it takes time and resources to educate newly added programmers and that more programmers means more lines of communication needed to keep in sync with the project's status. To investigate this relationship between addition of programmers and project efficiency, we will model a software development project using a system of differential equations.
+
+\section*{Sources}
+\begin{itemize}
+    \item "The Mythical Man-Month" by Fred Brooks
+    \item "Software Process Dynamics" by Raymond Madachy
+    \item "Brooks’ Law Revisited: A System Dynamics Approach" by Hsia, Hsu, and Kung
+    \item "An Initial Exploration of the Relationship Between Pair Programming and Brooks’ Law
+" by Williams, Shukla, and Anton
+    \item "Operational Labor Productivity Model" by Fulenwider, Helmes, Mojtahedzadeh, and MacDonald
+    \item "Brooks’ Law Repealed" by McConnell
+\end{itemize}
+
+\end{document}
