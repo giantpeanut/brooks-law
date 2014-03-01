@@ -16,7 +16,7 @@
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 % no label with 20pt indent
-\newenvironment{unitemize}
+\newenvironment{atomize}
     {\begin{list} {}
         {
             \setlength\itemindent{10pt}%
@@ -65,14 +65,46 @@ In "The Mythical Man Month", Brook also includes interesting arguments like inte
                 \item [$p$]: progress
             \end{itemize}
         \item Model:
-            \begin{unitemize}
+            \begin{atomize}
                 \item $x\prime = f\left(x, y, p, t\right)$
                 \item $y\prime = g\left(x, y, p, t\right)$
                 \item $p\prime = h\left(x, y, p, t\right)$
-            \end{unitemize}
+            \end{atomize}
     \end{itemize}
 
-\section*{Advanced model}
+\section*{Case I: extends Base}
+    \begin{itemize}
+        \item Assumptions:
+            \begin{itemize}
+                \item Only Junior staff is added.
+                \item Only Senior staff contributes progress.
+                \item Junior staff is added as a function of time, at a constant rate.
+                \item Junior staff becomes senior staff as a function of time, at a constant rate.
+                \item Senior staff contribute progress as a function of time, at a constant rate.
+            \end{itemize}
+        \item Quantities:
+            \begin{itemize}
+                \item [$r$]: rate at which junior staff is added
+                \item [$s$]: rate at which junior staff becomes senior staff
+                \item [$k$]: rate at which senior staff contributes progress
+            \end{itemize}
+        \item Model:
+            \begin{atomize}
+                \item $x\prime = r - s$
+                \item $y\prime = sx$
+                \item $p\prime = ky$
+            \end{atomize}
+        \item Solution:
+            \begin{atomize}
+                \item $x = \left(r - s\right)t + x_{0}$
+                \item $y = s\left(r - s\right)t + sx_{0}$
+                \item $p = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} + ky_{0}t + p_{0}$
+            \end{atomize}
+        \item Interpret:
+            \begin{itemize}
+                \item Bullshit!
+            \end{itemize}
+    \end{itemize}
 
 
 \end{document}
