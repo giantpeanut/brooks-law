@@ -15,8 +15,16 @@
 % tiny bullet points
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-% align environment
-\usepackage{asmath}
+% no label with 20pt indent
+\newenvironment{unitemize}
+    {\begin{list} {}
+        {
+            \setlength\itemindent{10pt}%
+            \setlength\leftmargin{0pt}%
+            \setlength\labelwidth{0pt}%
+        }
+    }%
+    {\unskip’’\end{list}}
 
 % info for \maketitle
 \author{Dylan Holmes, Kuangyou Yao, Jonathan K}
@@ -51,17 +59,17 @@ In "The Mythical Man Month", Brook also includes interesting arguments like inte
             \end{itemize}
         \item Quantities:
             \begin{itemize}
-                \item $t$: time spent working
-                \item $x$: junior staff
-                \item $y$: senior staff
-                \item $p$: progress
+                \item [$t$]: time spent working
+                \item [$x$]: junior staff
+                \item [$y$]: senior staff
+                \item [$p$]: progress
             \end{itemize}
         \item Model:
-            \begin{itemize}
+            \begin{unitemize}
                 \item $x\prime = f\left(x, y, p, t\right)$
                 \item $y\prime = g\left(x, y, p, t\right)$
                 \item $p\prime = h\left(x, y, p, t\right)$
-            \end{itemize}
+            \end{unitemize}
     \end{itemize}
 
 \section*{Advanced model}
