@@ -1,58 +1,68 @@
 \documentclass{article}
-% Margins
+
+% margins
 \usepackage[top=1in, bottom=1.5in, left=1.5in, right=1.5in]{geometry}
-% Comments
-\usepackage{verbatim}
-% Smart quotes using " instead of ''
+
+% smart quotes
 \usepackage [english]{babel}
 \usepackage [autostyle, english = american]{csquotes}
 \MakeOuterQuote{"}
-% Doublespacing
+
+% line spacing
 \usepackage{setspace}
-\doublespacing
-% Tiny bullets
+\singlespacing
+
+% tiny bullet points
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
+% align environment
+\usepackage{asmath}
 
-\author{Dylan Holmes, Kuangyou Yao, Jonathan K
-}
+% info for \maketitle
+\author{Dylan Holmes, Kuangyou Yao, Jonathan K}
 \title{Brooks' law}
 \date{February 17$^{th}$, 2014}
 
-\begin{comment}
-- - — - - - - - - - - - - — - - - - - - - - - - — - - - - - - - - - - — - 
-[ ] finish requirement checklist
-- - — - - - - - - - - - - — - - - - - - - - - - — - - - - - - - - - - — - 
-\end{comment}
+% todo checklist
+% - - — - - - - - - - - - - — - - - - - - - - - - — - - - - - - - - - - 
+% [ ] write more
+% - - — - - - - - - - - - - — - - - - - - - - - - — - - - - - - - - - - 
 
 \begin{document}
 
 \maketitle
 
-
-
 \section*{Abstract}
-According to Brooks' Law, "adding manpower to a late software project makes it late". Brooks' law originated from Fred Brooks' 1975 book, "The Mythical Man-Month", and has since become commonly accepted through out the software development community. The basic reasoning behind the principle is that it takes time and resources to educate newly added programmers and that more programmers means more lines of communication needed to keep in sync with the project's status. To investigate this relationship between addition of programmers and project efficiency, we will model a software development project using a system of differential equations.
+According to Brooks' Law, "adding manpower to a late software project makes it later". Brooks' law originated from Fred Brooks' 1975 book, "The Mythical Man-Month", and has since become commonly accepted through out the software development community. 
 
-\section*{Sources}
-\begin{itemize}
-    \item "The Mythical Man-Month" by Fred Brooks
-    \item "Software Process Dynamics" by Raymond Madachy
-    \item "Brooks’ Law Revisited: A System Dynamics Approach" by Hsia, Hsu, and Kung
-    \item "An Initial Exploration of the Relationship Between Pair Programming and Brooks’ Law
-" by Williams, Shukla, and Anton
-    \item "Operational Labor Productivity Model" by Fulenwider, Helmes, Mojtahedzadeh, and MacDonald
-    \item "Brooks’ Law Repealed" by McConnell
-\end{itemize}
+Suppose in a software firm, a project manager is facing a deadline issue. It is only 1 month away from the proposed deadline for the project in hand. Given that the project is only 60\% done, the project manager faces the problem whether he should hire additional engineers to pace up the process.
 
+Brook’s law argues that by adding new engineers, experienced and efficient engineers will have to give up part of their productivity to train the new people. Such a sacrifice will be devastating to a late project. The late project would be even more behind schedule by the time the new engineers would be able to reach the desirable efficiency. In short, it is not feasible to hire new engineers to rescue a late project.
 
-\section*{Brook's Law Revisit}
-
-Suppose in a software firm, a project manager is facing a deadline issue. It is only 1 month away from the proposed deadline for the project in hand. Given that the project is only 60\% done, the project manager faces the problem whether he should hire additional engineers to pace up the process.\\\\
-Brook’s law argues that by adding new engineers, experienced and efficient engineers will have to give up part of their productivity to train the new people. Such a sacrifice will be devastating to a late project. The late project would be even more behind schedule by the time the new engineers would be able to reach the desirable efficiency. In short, it is not feasible to hire new engineers to rescue a late project.\\\\
 In "The Mythical Man Month", Brook also includes interesting arguments like inter-employee communication, planning and optimism. In our paper, we will incorporate these ideas to develop a mathematic model that captures the dynamics of a project and employees working for the project.
 
-\section*{Basic setup}
+\section*{Base Case}
+    \begin{itemize}
+        \item Assumptions:
+            \begin{itemize}
+                \item Brooks' law can be modelled as the relationships between time, junior staff, senior staff, and progress.
+                \item The relationships between these quantites can be modelled as a system of first order differential equations.
+                \item Any of these quatities could effect any other quantity besides time.
+            \end{itemize}
+        \item Quantities:
+            \begin{itemize}
+                \item $t$: time spent working
+                \item $x$: junior staff
+                \item $y$: senior staff
+                \item $p$: progress
+            \end{itemize}
+        \item Model:
+            \begin{itemize}
+                \item $x\prime = f\left(x, y, p, t\right)$
+                \item $y\prime = g\left(x, y, p, t\right)$
+                \item $p\prime = h\left(x, y, p, t\right)$
+            \end{itemize}
+    \end{itemize}
 
 \section*{Advanced model}
 
