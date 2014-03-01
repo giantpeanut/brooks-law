@@ -15,16 +15,17 @@
 % tiny bullet points
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-% no label with 20pt indent
+% new list environment for lists with no labels
+% documentation on how this works at:
+%     run `texdoc source2e`
+%     look at section about lists on page 218 
 \newenvironment{atomize}
-    {\begin{list} {}
-        {
-            \setlength\itemindent{10pt}%
-            \setlength\leftmargin{0pt}%
-            \setlength\labelwidth{0pt}%
-        }
-    }%
-    {\unskip’’\end{list}}
+    {\begin{list} {} {
+            \setlength\itemindent{0pt}
+            \setlength\leftmargin{10pt}
+            \setlength\labelwidth{0pt}
+    }}
+    {\end{list}}
 
 % info for \maketitle
 \author{Dylan Holmes, Kuangyou Yao, Jonathan K}
@@ -50,7 +51,7 @@ Brook’s law argues that by adding new engineers, experienced and efficient eng
 In "The Mythical Man Month", Brook also includes interesting arguments like inter-employee communication, planning and optimism. In our paper, we will incorporate these ideas to develop a mathematic model that captures the dynamics of a project and employees working for the project.
 
 \section*{Base Case}
-    \begin{itemize}
+    \begin{atomize}
         \item Assumptions:
             \begin{itemize}
                 \item Brooks' law can be modelled as the relationships between time, junior staff, senior staff, and progress.
@@ -70,10 +71,10 @@ In "The Mythical Man Month", Brook also includes interesting arguments like inte
                 \item $y\prime = g\left(x, y, p, t\right)$
                 \item $p\prime = h\left(x, y, p, t\right)$
             \end{atomize}
-    \end{itemize}
+    \end{atomize}
 
 \section*{Case I: extends Base}
-    \begin{itemize}
+    \begin{atomize}
         \item Assumptions:
             \begin{itemize}
                 \item Only Junior staff is added.
@@ -104,7 +105,7 @@ In "The Mythical Man Month", Brook also includes interesting arguments like inte
             \begin{itemize}
                 \item Bullshit!
             \end{itemize}
-    \end{itemize}
+    \end{atomize}
 
 
 \end{document}
