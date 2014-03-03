@@ -42,22 +42,39 @@
 \maketitle
 
 \section*{Abstract}
-According to Brooks' Law, "adding manpower to a late software project makes it later". Brooks' law originated from Fred Brooks' 1975 book, "The Mythical Man-Month", and has since become commonly accepted through out the software development community. 
+According to Brooks' Law, "adding manpower to a late software project makes it
+later". Brooks' law originated from Fred Brooks' 1975 book, "The Mythical
+Man-Month", and has since become commonly accepted through out the software
+development community. 
 
-Suppose in a software firm, a project manager is facing a deadline in one month. Given that the project is only 60\% done, the project manager faces the problem of deciding if he should hire additional engineers to pace up the process.
+Suppose in a software firm, a project manager is facing a deadline in one month.
+Given that the project is only 60\% done, the project manager faces the problem
+of deciding if he should hire additional engineers to pace up the process.
 
-Brook’s law argues that by adding new engineers, experienced and efficient engineers will have to give up part of their productivity to train the new people. Such a sacrifice will be devastating to a late project. The late project will be even more behind schedule by the time the new engineers reach the desirable efficiency. In short, it is not feasible to hire new engineers to rescue a late project.
+Brook’s law argues that by adding new engineers, experienced and efficient
+engineers will have to give up part of their productivity to train the new
+people. Such a sacrifice will be devastating to a late project. The late project
+will be even more behind schedule by the time the new engineers reach the
+desirable efficiency. In short, it is not feasible to hire new engineers to
+rescue a late project.
 
-In his book, Brooks also includes several other interesting factors that may impact the progress of a project, such as inter-employee communication, planning and optimism. In our paper, we will incorporate these ideas to develop a mathematic model that captures the dynamics of a project and employees working for the project.
+In his book, Brooks also includes several other interesting factors that may
+impact the progress of a project, such as inter-employee communication, planning
+and optimism. In our paper, we will incorporate these ideas to develop a
+mathematic model that captures the dynamics of a project and employees working
+for the project.
 
 \section*{Base Case}
     \begin{atomize}
         \item Assumptions:
             \begin{itemize}
-                \item Brooks' law can be modelled as the relationships between time, junior staff, senior staff, and progress.
-                \item The relationships between these quantites can be modelled as a system of first order differential equations.
-                \item Any of these quatities could effect any other quantity besides time.
-            \end{itemize}
+								\item Brooks' law can be modelled as the relationships between
+								time, junior staff, senior staff, and progress.
+								\item The relationships between these quantites can be modelled
+								as a system of first order differential equations.
+								\item Any of these quatities could effect any other quantity
+								besides time.  
+								\end{itemize}
         \item Quantities:
             \begin{itemize}
                 \item [$t$]: time spent working
@@ -79,9 +96,12 @@ In his book, Brooks also includes several other interesting factors that may imp
             \begin{itemize}
                 \item Only Junior staff is added.
                 \item Only Senior staff contributes progress.
-                \item Junior staff is added as a function of time, at a constant rate.
-                \item Junior staff becomes senior staff as a function of time, at a constant rate.
-                \item Senior staff contribute progress as a function of time, at a constant rate.
+								\item Junior staff is added as a function of time, at a constant
+								rate.
+								\item Junior staff becomes senior staff as a function of time,
+								at a constant rate.
+								\item Senior staff contribute progress as a function of time, at
+								a constant rate.
             \end{itemize}
         \item Quantities:
             \begin{itemize}
@@ -99,7 +119,8 @@ In his book, Brooks also includes several other interesting factors that may imp
             \begin{atomize}
                 \item $x = \left(r - s\right)t + x_{0}$
                 \item $y = s\left(r - s\right)t + sx_{0}$
-                \item $p = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} + ky_{0}t + p_{0}$
+								\item $p = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} +
+								ky_{0}t + p_{0}$
             \end{atomize}
         \item Interpret:
             \begin{itemize}
@@ -111,11 +132,13 @@ In his book, Brooks also includes several other interesting factors that may imp
     \begin{atomize}
         \item Assumptions:
             \begin{itemize}
-                \item Junior staff inhibits the senior staff ability to contribute progress as a function of time, at a constant rate.
+								\item Junior staff inhibits the senior staff ability to
+								contribute progress as a function of time, at a constant rate.
             \end{itemize}
         \item Quantities:
             \begin{itemize}
-                \item [$l$]: rate at which junior staff inhibits the senior staff ability to contribute progress
+								\item [$l$]: rate at which junior staff inhibits the senior
+								staff ability to contribute progress
             \end{itemize}
         \item Model:
             \begin{atomize}
@@ -127,8 +150,8 @@ In his book, Brooks also includes several other interesting factors that may imp
             \begin{atomize}
                 \item $x = \left(r - s\right)t + x_{0}$
                 \item $y = s\left(r - s\right)t + sx_{0}$
-                \item $p = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} + ky_{0}t
-                    - \frac{1}{2}l(r-s)t^{2} - lx_{0}t  + p_{0} $
+								\item $p = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} +
+								ky_{0}t - \frac{1}{2}l(r-s)t^{2} - lx_{0}t  + p_{0} $
             \end{atomize}
         \item Interpret:
             \begin{itemize}
