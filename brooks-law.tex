@@ -82,6 +82,7 @@ In his book, Brooks also includes several other interesting factors that may imp
                 \item Junior staff is added as a function of time, at a constant rate.
                 \item Junior staff becomes senior staff as a function of time, at a constant rate.
                 \item Senior staff contribute progress as a function of time, at a constant rate.
+                \item $r > s$
             \end{itemize}
         \item Quantities:
             \begin{itemize}
@@ -98,12 +99,16 @@ In his book, Brooks also includes several other interesting factors that may imp
         \item Solution:
             \begin{atomize}
                 \item $x = \left(r - s\right)t + x_{0}$
-                \item $y = s\left(r - s\right)t + sx_{0}$
+                \item $y = \frac{1}{2}s\left(r - s\right)t^{2} + sx_{0}t+y_{0}$
                 \item $p = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} + ky_{0}t + p_{0}$
             \end{atomize}
         \item Interpret:
             \begin{itemize}
-                \item Bullshit!
+                \item In the case where s=0, which means that new employees never become senior engineers and hence never contribute anything to the project. This is essentially the same as not hiring anybody. So we have $p_{i}=ky_{0}t + p_{0}$
+
+And if $s\neq0$, we have the original $p_{o} = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} + ky_{0}t + p_{0}$ So if we solve for $p_{i}=p_{o}$, we find the intersecting point, which is $t=\frac{-3x_{0}}{r-s}$
+
+\item By solving for the point where the two lines intersect, we can find out exactly when the new employee come into the game, or when they will start contributing equally if the firm did not hire new employee(Some one rephrase this for me). But in this case, we find that $t$ is always non positive since we assume $r>s$ and $r\geq0$. Physically it is impossible for $t$ to be negative, so we have to work on a better version for the model.
             \end{itemize}
     \end{atomize}
 
@@ -126,13 +131,14 @@ In his book, Brooks also includes several other interesting factors that may imp
         \item Solution:
             \begin{atomize}
                 \item $x = \left(r - s\right)t + x_{0}$
-                \item $y = s\left(r - s\right)t + sx_{0}$
+                \item $y = \frac{1}{2}s\left(r - s\right)t^{2} + sx_{0}t+y_{0}$
                 \item $p = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} + ky_{0}t
                     - \frac{1}{2}l(r-s)t^{2} - lx_{0}t  + p_{0} $
             \end{atomize}
         \item Interpret:
             \begin{itemize}
-                \item More bullshit!
+                \item Using the analysis above, if we try to find the intersecting point of the curve $s=0$ and $s\neq0$, we find that t=$\frac{31r-31s-3ksx_{0}\pm\sqrt{481(krs-ks^2)x_{0}+(-31r+31s+3ksx_{0})^2}}{2(krs-ks^2)}$. 
+                \item We see that t is .... Oh god do this later...
             \end{itemize}
     \end{atomize}
 
