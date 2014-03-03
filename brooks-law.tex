@@ -102,7 +102,8 @@ for the project.
 								at a constant rate.
 								\item Senior staff contribute progress as a function of time, at
 								a constant rate.
-                \item $r > s$
+                \item Junior staff cannot become senior staff faster than the
+								are added.
             \end{itemize}
         \item Quantities:
             \begin{itemize}
@@ -110,6 +111,10 @@ for the project.
                 \item [$s$]: rate at which junior staff becomes senior staff
                 \item [$k$]: rate at which senior staff contributes progress
             \end{itemize}
+				\item Constraints:
+						\begin{atomize}
+								\item $r > s$
+						\end{atomize}
         \item Model:
             \begin{atomize}
                 \item $x\prime = r - s$
