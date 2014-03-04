@@ -66,21 +66,31 @@ for the project.
 
 \section*{Base Case}
     \begin{atomize}
+				\item Objective:
+
+						Under what conditions does this model hold true for Brooks' Law?
         \item Assumptions:
             \begin{itemize}
 								\item Brooks' law can be modelled as the relationships between
 								time, junior staff, senior staff, and progress.
 								\item The relationships between these quantites can be modelled
 								as a system of first order differential equations.
-								\item Any of these quatities could effect any other quantity
+								\item Any of these quantities could effect any other quantity
 								besides time.  
 								\end{itemize}
         \item Quantities:
             \begin{itemize}
-                \item [$t$]: time spent working
-                \item [$x$]: junior staff
-                \item [$y$]: senior staff
-                \item [$p$]: progress
+                \item [$t$]: time spent working in days
+                \item [$x$]: junior staff in number of people
+                \item [$y$]: senior staff in number of people
+                \item [$p$]: progress in of lines of code (added, deleted, or
+								\item [$t_{0}$]: intial time
+								\item [$t_{1}$]: target deadline
+								\item [$x_{0}$]: initial junior staff
+								\item [$y_{0}$]: initial senior staff
+								\item [$p_{0}$]: initial progress
+								\item [$p_{1}$]: target progress
+								revised)
             \end{itemize}
         \item Model:
             \begin{atomize}
@@ -104,12 +114,20 @@ for the project.
 								a constant rate.
                 \item Junior staff cannot become senior staff faster than the
 								are added.
+								\item The project is already under way and a deadline is
+								approaching.
+								\item Until now, no junior staff has been added.
             \end{itemize}
         \item Quantities:
             \begin{itemize}
-                \item [$r$]: rate at which junior staff is added
-                \item [$s$]: rate at which junior staff becomes senior staff
-                \item [$k$]: rate at which senior staff contributes progress
+                \item [$r$]: rate at which junior staff is added in people per
+								day
+                \item [$s$]: rate at which junior staff becomes senior staff in
+								people per day
+                \item [$k$]: rate at which senior staff contributes progress in
+								lines of code per person per day
+								\item [$t_{0}$]: time now
+								\item [$t_{1}$]: time of deadline
             \end{itemize}
 				\item Constraints:
 						\begin{atomize}
@@ -130,24 +148,41 @@ for the project.
             \end{atomize}
         \item Interpret:
             \begin{itemize}
-								\item In the case where s=0, which means that new employees
-								never become senior engineers and hence never contribute
-								anything to the project. This is essentially the same as not
-								hiring anybody. So we have $p_{i}=ky_{0}t + p_{0}$
+								\item In the case where $s=0$, new employees never become senior
+								engineers and hence never contribute anything to the project.
+								This is essentially the same as not hiring anybody. So we have
+								$p_{i}=ky_{0}t + p_{0}$
 
 								And if $s\neq0$, we have the original $p_{o} =
 								\frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} + ky_{0}t +
-								p_{0}$ So if we solve for $p_{i}=p_{o}$, we	find the
+								p_{0}$. So if we solve for $p_{i}=p_{o}$, we	find the
 								intersecting point, which is $t=\frac{-3x_{0}}{r-s}$
 
 								\item By solving for the point where the two lines intersect, we
 								can find out exactly when the new employee come into the game,
 								or when they will start contributing equally if the firm did not
-								hire new employee(Some one rephrase this for me). But in this
+								hire new employee (Some one rephrase this for me). But in this
 								case, we find that $t$ is always non positive since we assume
 								$r>s$ and $r\geq0$. Physically it is impossible for $t$ to be
 								negative, so we have to work on a better version for the model.
             \end{itemize}
+				\item Compare with Brooks' Law:
+						\begin{atomize}
+								\item How well does this compare with brooks' law?
+								\item Let's say we have a project that has been under way for
+								some time, and now the deadline is coming up. The project
+								manager is following our model to guide his decision as to
+								whether or not he should begin bringing in new developers to the
+								project.
+								\item The project status according to our model:
+										\begin{atomize}
+												\item $t_{0} = 0$
+												\item $t_{1} = 30$ (deadline)
+												\item $p_{0} = 50000$
+												\item $k = 50$
+										\end{atomize}
+								\item dfjlksdjf
+						\end{atomize}
     \end{atomize}
 
 \section*{Case II: extends Case I}
