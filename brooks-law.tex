@@ -94,7 +94,7 @@ for the project.
 				\item [$y_{j}$]: senior staff with hiring
         \item [$p_{j}$]: progress with hiring
       \end{itemize}
-
+	
     \item Model:
       \begin{atomize}
         \item $x\prime = f\left(x, y, p, t\right)$
@@ -125,14 +125,10 @@ for the project.
 		senior staff in people per day \item [$k$]: rate at which senior staff
 		contributes progress in lines of code per person per day \end{itemize}
 
-  \item Constraints:
-  	\begin{atomize}
-    	\item $r > s$
-  	\end{atomize}
-
-  \item Inital Conditions:
+  \item Conditions:
   	\begin{atomize}
     	\item $x_{0} = 0$
+    	\item $r > s$
   	\end{atomize}
 
     \item Model:
@@ -144,20 +140,16 @@ for the project.
 
     \item Interpret:
   		\begin{atomize}
-				\item How well does this compare with Brooks' law?  Under what
-				conditions does Brooks' law hold true?
   			\item
 				  \begin{itemize}
-				    \item If the project manager decides not to hire any new
-				    staff ($,r,s = 0$) the model becomes:
+				    \item Without hiring new staff ($r,s = 0$):
 				    \begin{atomize}
 				    	\item $x_{s} = 0$
 				    	\item $y_{s} = y_{0}$
 				    	\item $p_{s} = ky_{0}t_{1} + p_{0}$
 				    \end{atomize}
-				    By the deadline, the project is ...
 				
-				    \item If the project manager decides to hire new staff:
+				  \item With hiring new staff:
 				    \begin{atomize}
 				    \item $x_{j} = \left(r - s\right)t + x_{0}$
 						\item $y_{j} = \frac{1}{2}s\left(r - s\right)t^{2} + sx_{0}t +
@@ -165,15 +157,16 @@ for the project.
 						\item $p_{j} = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} +
 						ky_{0}t + p_{0}$
 				    \end{atomize}
-						By the deadline, the project is ...  Solving for $p_{s}=p_{j}$, we
-						find the intersecting point, which By solving for the point where
-						the two lines intersect, we can find out exactly when the new
-						employee come into the game, or when they will start contributing
-						equally if the firm did not hire new employee (Some one rephrase
-						this for me). But in this case, we find that $t$ is always non
-						positive since we assume $r>s$ and $r\geq0$.  Physically it is
-						impossible for $t$ to be negative, so we have to work on a better
-						version for the model.  is $t=\frac{-3x_{0}}{r-s}$
+				  \item When $p_{s}(t_{d})=p_{j}(t_{d})$, either strategy is equally
+						effective in reaching maximum progress. This point is where the
+						curves $p_{s}$ and $p_{j}$ intersect. 
+
+						"Write solution to $p_{s}(t_{d})=p_{j}(t_{d})$ here" 
+
+						" Insert graph of $p_{s} vs p_{j}$ here "
+
+						$t_{d} = \frac{-3x_{0}}{r-s} \leq 0$. This means that the two
+						strategies are never equally effective.
 				  	\end{itemize}	
   	\end{atomize}
   \end{atomize}
