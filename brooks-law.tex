@@ -12,6 +12,11 @@
 \usepackage{setspace}
 \singlespacing
 
+% images
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.png}
+\graphicspath{ {./images/} }
+
 % tiny bullet points
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
@@ -153,8 +158,9 @@ for the project.
 							\item This plus solving in terms of progress:
 							\item
 								\begin{atomize}
-									\item $\Psi\prime\prime\prime = \frac{s}{k}(r-s)$
-									\item $\Psi\prime\prime(0) = \frac{s}{k}\Xi_{0}$
+									\item $\beta = \frac{s}{k}(r-s), \beta \geq 0$
+									\item $\Psi\prime\prime\prime = \beta$
+									\item $\Psi\prime\prime(0) = 0$
 									\item $\Psi\prime(0) = \Phi_{0}$
 									\item $\Psi(0) = \Psi_{0}$
 								\end{atomize}
@@ -170,9 +176,14 @@ for the project.
 							progress, larger $\Psi$) after $t_{0}$. Since $t_{d} > t_{0}$,
 							this means that $p_{j}(t_{d}) > p_{s}(t_{d})$ regardless of the
 							values of any other parameter.
+							\item 
+								\begin{figure}[h!]
+									\centering
+									\includegraphics[width=\textwidth]{caseI}
+								\end{figure}
 					\end{atomize}
 
-  			\item
+  			\item Another Part:
 				  \begin{itemize}
 				    \item Without hiring new staff ($r,s = 0$):
 				    \begin{atomize}
