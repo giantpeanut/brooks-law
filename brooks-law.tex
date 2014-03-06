@@ -140,6 +140,38 @@ for the project.
 
     \item Interpret:
   		\begin{atomize}
+				\item Model Nondimensionalized:
+					\begin{atomize}
+						\item Let
+						\item
+							\begin{atomize}
+								\item $t = \tau T$
+								\item $x = \xi\Xi$
+								\item $y = \phi\Phi$
+								\item $p = \psi\Psi$
+							\end{atomize}
+							\item This plus solving in terms of progress:
+							\item
+								\begin{atomize}
+									\item $\Psi\prime\prime\prime = \frac{s}{k}(r-s)$
+									\item $\Psi\prime\prime(0) = \frac{s}{k}\Xi_{0}$
+									\item $\Psi\prime(0) = \Phi_{0}$
+									\item $\Psi(0) = \Psi_{0}$
+								\end{atomize}
+							\item $\Psi$ is nondimensionalized progress. With hiring
+							$\Psi\prime\prime\prime > 0$, and without hiring
+							$\Psi\prime\prime\prime = 0$. Since both stategies start out with
+							the same intial change in rate of progress
+							($\Psi\prime\prime(0)$), rate of progress ($\Psi\prime(0)$), and
+							amount of progress ($\Psi(0)$), this leaves the rate of change of
+							change in rate of progress ($\Psi\prime\prime\prime$) to seperate
+							the two strategies. Since $\Psi\prime\prime\prime > 0$, this means
+							that the hiring strategy will always be more effective (more
+							progress, larger $\Psi$) after $t_{0}$. Since $t_{d} > t_{0}$,
+							this means that $p_{j}(t_{d}) > p_{s}(t_{d})$ regardless of the
+							values of any other parameter.
+					\end{atomize}
+
   			\item
 				  \begin{itemize}
 				    \item Without hiring new staff ($r,s = 0$):
@@ -170,6 +202,15 @@ for the project.
 						$t_{d} = \frac{-3x_{0}}{r-s} \leq 0$, which means that the two
 						strategies are never equally effective.
 				  	\end{itemize}	
+				\item Reality:
+					This model does not model Brooks' Law under any condition. With this
+					model, hiring new staff with always result in more progress by any
+					future date. To correctly model Brooks' Law, the model must at the
+					very minimum have some conditions under which hiring new staff would
+					slow progress and cause a late project even later. One important
+					factor not taken into consideration was the time taken by senior staff
+					to train junior staff, which we will incorporate into the next
+					iteration of this model.
   	\end{atomize}
   \end{atomize}
 
