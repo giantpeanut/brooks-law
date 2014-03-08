@@ -82,12 +82,12 @@ for the project.
   \begin{atomize}
     \item Assumptions:
       \begin{itemize}
-				\item Brooks' law can be modelled as the relationships between
-				time, junior staff, senior staff, and progress.
-				\item The relationships between these quantites can be modelled
-				as a system of first order differential equations.
-				\item Any of these quantities could effect any other quantity besides
-				time.  
+        \item Brooks' law can be modelled as the relationships between
+        time, junior staff, senior staff, and progress.
+        \item The relationships between these quantites can be modelled
+        as a system of first order differential equations.
+        \item Any of these quantities could effect any other quantity besides
+        time.  
         \end{itemize}
 
     \item Quantities:
@@ -96,19 +96,12 @@ for the project.
         \item [$x$]: junior staff in number of people
         \item [$y$]: senior staff in number of people
         \item [$p$]: progress in of lines of code (added, deleted, or revised)
-        \item [$t_{0}$]: initial time
-        \item [$x_{0}$]: initial junior staff
-        \item [$y_{0}$]: initial senior staff
-        \item [$p_{0}$]: initial progress
         \item [$t_{d}$]: target deadline
-				\item [$x_{s}$]: junior staff without hiring
-				\item [$y_{s}$]: senior staff without hiring
-        \item [$p_{s}$]: progress without hiring
-        \item [$x_{j}$]: junior staff with hiring
-				\item [$y_{j}$]: senior staff with hiring
-        \item [$p_{j}$]: progress with hiring
+        \item [$*_{0}$]: initial value of the quantity "*"
+        \item [$*_{s}$]: value of the quantity "*" without hiring
+        \item [$*_{j}$]: value of the quantity "*" without hiring
       \end{itemize}
-	
+  
     \item Model:
       \begin{align*}
         &x\prime = f\left(x, y, p, t\right) \\[6pt]
@@ -122,114 +115,117 @@ for the project.
     \item Assumptions:
       \begin{itemize}
         \item Only Junior staff is added.
-				\item Only Senior staff contributes progress.
-				\item Junior staff is added as a function of time, at a constant rate.
-				\item Junior staff becomes senior staff as a function of time, at a
-				constant rate.
-				\item Senior staff contribute progress as a function of time, at a
-				constant rate.
-				\item Junior staff cannot become senior staff faster than they are
-				added.
-				\item The project is already under way and a deadline is approaching.
-				\item Until now, no junior staff has been added.
+        \item Only Senior staff contributes progress.
+        \item Junior staff is added as a function of time, at a constant rate.
+        \item Junior staff becomes senior staff as a function of time, at a
+        constant rate.
+        \item Senior staff contribute progress as a function of time, at a
+        constant rate.
+        \item Junior staff cannot become senior staff faster than they are
+        added.
+        \item The project is already under way and a deadline is approaching.
+        \item Until now, no junior staff has been added.
       \end{itemize}
 
-		\item Quantities:
-			\begin{itemize} 
-				\item [$r$]: rate at which junior staff is added in people per day 
-				\item [$s$]: rate at which junior staff becomes senior staff in people per day
-				\item [$k$]: rate at which senior staff contributes progress in lines of
-				code per person per day
-			\end{itemize}
+    \item Quantities:
+      \begin{itemize} 
+        \item [$r$]: rate at which junior staff is added in people per day 
+        \item [$s$]: rate at which junior staff becomes senior staff in people per day
+        \item [$k$]: rate at which senior staff contributes progress in lines of
+        code per person per day
+      \end{itemize}
 
-		\item Conditions:
-  		\begin{align*}
-  	  	&x_{0} = 0 \\[6pt]
-  	  	&r > s
-  		\end{align*}
+    \item Conditions:
+      \begin{align*}
+        &x_{0} = 0 \\[6pt]
+        &r > s
+      \end{align*}
 
-		\item Model:
+    \item Model:
       \begin{align*}
         &x\prime = r - s \\[6pt]
         &y\prime = sx \\[6pt]
         &p\prime = ky
       \end{align*}
-			\pagebreak
 
-		\item Interpret:
-			\begin{atomize}
-				\item Let
-					\begin{align*}
-						&t = \tau \Tau \\[6pt]
-						&x = \xi\Xi \\[6pt]
-						&y = \phi\Phi \\[6pt]
-						&p = \psi\Psi
-					\end{align*}
-				\item The model becomes
-					\begin{align*}
-						\Xi^{\prime} &= \frac{\tau}{\xi}(r - s) \\[6pt]
-						\Phi^{\prime} &= \frac{s\tau\xi}{\phi}\Xi \\[6pt]
-						\Psi^{\prime} &= \frac{k\phi\tau}{\psi}\Phi
-					\end{align*}
-				\item Let
-					\begin{align*}
-						\tau = \xi = \phi = \psi = \frac{1}{k}
-					\end{align*}
-				\item The model becomes
-					\begin{align*}
-						\Xi^{\prime} &= r - s \\[6pt]
-						\Phi^{\prime} &= \frac{s}{k}\Xi \\[6pt]
-						\Psi^{\prime} &= \Phi
-					\end{align*}
-				\item Solving in terms of $\Psi$:
-					\begin{align*}
-						&\beta = \frac{s}{k}(r-s), \beta \geq 0 \\[6pt]
-						&\Psi^{\prime\prime\prime} = \beta \\[6pt]
-						&\Psi^{\prime\prime}(0) = \Xi_{0} = \frac{x_{0}}{\xi} = 0 \\[6pt]
-						&\Psi^{\prime}(0) = \Phi_{0} \\[6pt]
-						&\Psi(0) = \Psi_{0}
-					\end{align*}
-				\item $\Psi$ is nondimensionalized progress. Since both stategies start
-				out with the same intial conditions, $\Psi^{\prime\prime\prime}$ is only
-				factor that differentiates the two strategies.  With hiring
-				$\Psi^{\prime\prime\prime} > 0$, meaning that the rate of progress will
-				increase and without hiring $\Psi^{\prime\prime\prime} = 0$, meaning
-				that progress will continue at the same constant rate. Thus, hiring will
-				always be more effective than not hiring. 
-				\item 
-					\begin{figure}[H]
-						\centering
-						\includegraphics[width=\textwidth]{caseI}
-					\end{figure}
-			\end{atomize}
+    \item Interpret:
+      \begin{atomize}
+        \item Let
+          \begin{align*}
+            &t = \tau \Tau \\[6pt]
+            &x = \xi\Xi \\[6pt]
+            &y = \phi\Phi \\[6pt]
+            &p = \psi\Psi
+          \end{align*}
 
-		\item Reality:
-			\begin{atomize}
-				\item This model does not model Brooks' Law under any conditions.
-				Hiring new staff with always be more a more effective strategy, no
-				matter how soon the deadline is. Brooks' Law predicts that hiring
-				new staff is a less effective strategy with a sufficently close
-				deadline.  At the very minimum, the model must have some conditions
-				under which hiring new staff would slow progress and thus, cause a
-				late project to be even later. One important factor not taken into
-				consideration was the time taken by senior staff to train junior
-				staff, which we will incorporate into the next iteration of this
-				model.
-			\end{atomize}
+        \item Nondimensionalized, the model becomes:
+          \begin{align*}
+            \Xi^{\prime} &= \frac{\tau}{\xi}(r - s) \\[6pt]
+            \Phi^{\prime} &= \frac{s\tau\xi}{\phi}\Xi \\[6pt]
+            \Psi^{\prime} &= \frac{k\phi\tau}{\psi}\Phi
+          \end{align*}
+
+        \item Let
+          \begin{align*}
+            \tau = \xi = \phi = \psi = \frac{1}{k}
+          \end{align*}
+          
+        \item After substituting:
+          \begin{align*}
+            \Xi^{\prime} &= r - s \\[6pt]
+            \Phi^{\prime} &= \frac{s}{k}\Xi \\[6pt]
+            \Psi^{\prime} &= \Phi
+          \end{align*}
+
+        \item Solving in terms of $\Psi$:
+          \begin{align*}
+            &\beta = \frac{s}{k}(r-s), \beta \geq 0 \\[6pt]
+            &\Psi^{\prime\prime\prime} = \beta \\[6pt]
+            &\Psi^{\prime\prime}(0) = \Xi_{0} = \frac{x_{0}}{\xi} = 0 \\[6pt]
+            &\Psi^{\prime}(0) = \Phi_{0} \\[6pt]
+            &\Psi(0) = \Psi_{0}
+          \end{align*}
+        \item $\Psi$ is nondimensionalized progress. Since both stategies start
+        out with the same intial conditions, $\Psi^{\prime\prime\prime}$ is only
+        factor that differentiates the two strategies.  With hiring
+        $\Psi^{\prime\prime\prime} > 0$, meaning that the rate of progress will
+        increase and without hiring $\Psi^{\prime\prime\prime} = 0$, meaning
+        that progress will continue at the same constant rate. Thus, hiring will
+        always be more effective than not hiring. 
+        \item 
+          \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{caseI}
+          \end{figure}
+      \end{atomize}
+
+    \item Reality:
+      \begin{atomize}
+        \item This model does not model Brooks' Law under any conditions.
+        Hiring new staff with always be more a more effective strategy, no
+        matter how soon the deadline is. Brooks' Law predicts that hiring
+        new staff is a less effective strategy with a sufficently close
+        deadline.  At the very minimum, the model must have some conditions
+        under which hiring new staff would slow progress and thus, cause a
+        late project to be even later. One important factor not taken into
+        consideration was the time taken by senior staff to train junior
+        staff, which we will incorporate into the next iteration of this
+        model.
+      \end{atomize}
   \end{atomize}
 
 \section*{Case II: extends Case I}
   \begin{atomize}
     \item Assumptions:
       \begin{itemize}
-				\item Junior staff inhibits the senior staff ability to contribute
-				progress as a function of time, at a constant rate.
+        \item Junior staff inhibits the senior staff ability to contribute
+        progress as a function of time, at a constant rate.
       \end{itemize}
 
     \item Quantities:
       \begin{itemize}
-				\item [$l$]: rate at which junior staff inhibits the senior staff
-				ability to contribute progress
+        \item [$l$]: rate at which junior staff inhibits the senior staff
+        ability to contribute progress
       \end{itemize}
 
     \item Model:
@@ -243,16 +239,16 @@ for the project.
       \begin{atomize}
         \item $x = \left(r - s\right)t + x_{0}$
         \item $y = \frac{1}{2}s\left(r - s\right)t^{2} + sx_{0}t+y_{0}$
-				\item $p = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} + ky_{0}t -
-				\frac{1}{2}l(r-s)t^{2} - lx_{0}t  + p_{0} $
+        \item $p = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} + ky_{0}t -
+        \frac{1}{2}l(r-s)t^{2} - lx_{0}t  + p_{0} $
       \end{atomize}
 
     \item Interpret:
       \begin{itemize}
-				\item Using the analysis above, if we try to find the intersecting point
-				of the curve $s=0$ and $s\neq0$, we find that
-				t=$\frac{31r-31s-3ksx_{0}\pm\sqrt{481(krs-ks^2)x_{0} +
-				(-31r+31s+3ksx_{0})^2}}{2(krs-ks^2)}$. 
+        \item Using the analysis above, if we try to find the intersecting point
+        of the curve $s=0$ and $s\neq0$, we find that
+        t=$\frac{31r-31s-3ksx_{0}\pm\sqrt{481(krs-ks^2)x_{0} +
+        (-31r+31s+3ksx_{0})^2}}{2(krs-ks^2)}$. 
         \item We see that t is .... Oh god do this later...
       \end{itemize}
   \end{atomize}
