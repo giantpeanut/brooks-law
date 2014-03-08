@@ -12,10 +12,19 @@
 \usepackage{setspace}
 \singlespacing
 
+\usepackage[fleqn]{amsmath}
+
 % images
 \usepackage{graphicx}
 \DeclareGraphicsExtensions{.png}
 \graphicspath{ {./images/} }
+
+% for H option for figure environment
+% H forces figure to be placed where written
+\usepackage{float}
+
+% capital Tau
+\newcommand{\Tau}{\mathrm{T}}
 
 % tiny bullet points
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -101,11 +110,11 @@ for the project.
       \end{itemize}
 	
     \item Model:
-      \begin{atomize}
-        \item $x\prime = f\left(x, y, p, t\right)$
-        \item $y\prime = g\left(x, y, p, t\right)$
-        \item $p\prime = h\left(x, y, p, t\right)$
-      \end{atomize}
+      \begin{align*}
+        &x\prime = f\left(x, y, p, t\right) \\[6pt]
+        &y\prime = g\left(x, y, p, t\right) \\[6pt]
+        &p\prime = h\left(x, y, p, t\right)
+      \end{align*}
   \end{atomize}
 
 \section*{Case I: extends Base}
@@ -125,104 +134,88 @@ for the project.
 				\item Until now, no junior staff has been added.
       \end{itemize}
 
-		\item Quantities: \begin{itemize} \item [$r$]: rate at which junior staff is
-		added in people per day \item [$s$]: rate at which junior staff becomes
-		senior staff in people per day \item [$k$]: rate at which senior staff
-		contributes progress in lines of code per person per day \end{itemize}
+		\item Quantities:
+			\begin{itemize} 
+				\item [$r$]: rate at which junior staff is added in people per day 
+				\item [$s$]: rate at which junior staff becomes senior staff in people per day
+				\item [$k$]: rate at which senior staff contributes progress in lines of
+				code per person per day
+			\end{itemize}
 
-  \item Conditions:
-  	\begin{atomize}
-    	\item $x_{0} = 0$
-    	\item $r > s$
-  	\end{atomize}
+		\item Conditions:
+  		\begin{align*}
+  	  	&x_{0} = 0 \\[6pt]
+  	  	&r > s
+  		\end{align*}
 
-    \item Model:
-      \begin{atomize}
-        \item $x\prime = r - s$
-        \item $y\prime = sx$
-        \item $p\prime = ky$
-      \end{atomize}
+		\item Model:
+      \begin{align*}
+        &x\prime = r - s \\[6pt]
+        &y\prime = sx \\[6pt]
+        &p\prime = ky
+      \end{align*}
+			\pagebreak
 
-    \item Interpret:
-  		\begin{atomize}
-				\item Model Nondimensionalized:
-					\begin{atomize}
-						\item Let
-						\item
-							\begin{atomize}
-								\item $t = \tau T$
-								\item $x = \xi\Xi$
-								\item $y = \phi\Phi$
-								\item $p = \psi\Psi$
-							\end{atomize}
-							\item This plus solving in terms of progress:
-							\item
-								\begin{atomize}
-									\item $\beta = \frac{s}{k}(r-s), \beta \geq 0$
-									\item $\Psi\prime\prime\prime = \beta$
-									\item $\Psi\prime\prime(0) = 0$
-									\item $\Psi\prime(0) = \Phi_{0}$
-									\item $\Psi(0) = \Psi_{0}$
-								\end{atomize}
-							\item $\Psi$ is nondimensionalized progress. With hiring
-							$\Psi\prime\prime\prime > 0$, and without hiring
-							$\Psi\prime\prime\prime = 0$. Since both stategies start out with
-							the same intial change in rate of progress
-							($\Psi\prime\prime(0)$), rate of progress ($\Psi\prime(0)$), and
-							amount of progress ($\Psi(0)$), this leaves the rate of change of
-							change in rate of progress ($\Psi\prime\prime\prime$) to seperate
-							the two strategies. Since $\Psi\prime\prime\prime > 0$, this means
-							that the hiring strategy will always be more effective (more
-							progress, larger $\Psi$) after $t_{0}$. Since $t_{d} > t_{0}$,
-							this means that $p_{j}(t_{d}) > p_{s}(t_{d})$ regardless of the
-							values of any other parameter.
-							\item 
-								\begin{figure}[h!]
-									\centering
-									\includegraphics[width=\textwidth]{caseI}
-								\end{figure}
-					\end{atomize}
+		\item Interpret:
+			\begin{atomize}
+				\item Let
+					\begin{align*}
+						&t = \tau \Tau \\[6pt]
+						&x = \xi\Xi \\[6pt]
+						&y = \phi\Phi \\[6pt]
+						&p = \psi\Psi
+					\end{align*}
+				\item The model becomes
+					\begin{align*}
+						\Xi^{\prime} &= \frac{\tau}{\xi}(r - s) \\[6pt]
+						\Phi^{\prime} &= \frac{s\tau\xi}{\phi}\Xi \\[6pt]
+						\Psi^{\prime} &= \frac{k\phi\tau}{\psi}\Phi
+					\end{align*}
+				\item Let
+					\begin{align*}
+						\tau = \xi = \phi = \psi = \frac{1}{k}
+					\end{align*}
+				\item The model becomes
+					\begin{align*}
+						\Xi^{\prime} &= r - s \\[6pt]
+						\Phi^{\prime} &= \frac{s}{k}\Xi \\[6pt]
+						\Psi^{\prime} &= \Phi
+					\end{align*}
+				\item Solving in terms of $\Psi$:
+					\begin{align*}
+						&\beta = \frac{s}{k}(r-s), \beta \geq 0 \\[6pt]
+						&\Psi^{\prime\prime\prime} = \beta \\[6pt]
+						&\Psi^{\prime\prime}(0) = \Xi_{0} = \frac{x_{0}}{\xi} = 0 \\[6pt]
+						&\Psi^{\prime}(0) = \Phi_{0} \\[6pt]
+						&\Psi(0) = \Psi_{0}
+					\end{align*}
+				\item $\Psi$ is nondimensionalized progress. Since both stategies start
+				out with the same intial conditions, $\Psi^{\prime\prime\prime}$ is only
+				factor that differentiates the two strategies.  With hiring
+				$\Psi^{\prime\prime\prime} > 0$, meaning that the rate of progress will
+				increase and without hiring $\Psi^{\prime\prime\prime} = 0$, meaning
+				that progress will continue at the same constant rate. Thus, hiring will
+				always be more effective than not hiring. 
+				\item 
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=\textwidth]{caseI}
+					\end{figure}
+			\end{atomize}
 
-  			\item Another Part:
-				  \begin{itemize}
-				    \item Without hiring new staff ($r,s = 0$):
-				    \begin{atomize}
-				    	\item $x_{s} = 0$
-				    	\item $y_{s} = y_{0}$
-				    	\item $p_{s} = ky_{0}t_{1} + p_{0}$
-				    \end{atomize}
-				
-				  \item With hiring new staff:
-				    \begin{atomize}
-				    \item $x_{j} = \left(r - s\right)t + x_{0}$
-						\item $y_{j} = \frac{1}{2}s\left(r - s\right)t^{2} + sx_{0}t +
-						y_{0}$
-						\item $p_{j} = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} +
-						ky_{0}t + p_{0}$
-				    \end{atomize}
-				  \item When $p_{s}(t_{d})=p_{j}(t_{d})$, either strategy is equally
-						effective in reaching maximum progress. This point is where the
-						curves $p_{s}$ and $p_{j}$ intersect. By nondimensionalizing these
-						curves we can look at how these strategies compare, explicitly and
-						graphically.\newline
-
-						\begin{atomize}
-							\item "Write solution to $p_{s}(t_{d})=p_{j}(t_{d})$ here" 
-							\item " Insert graph of $p_{s}$ vs $p_{j}$ here "\newline
-						\end{atomize}
-						$t_{d} = \frac{-3x_{0}}{r-s} \leq 0$, which means that the two
-						strategies are never equally effective.
-				  	\end{itemize}	
-				\item Reality:
-					This model does not model Brooks' Law under any condition. With this
-					model, hiring new staff with always result in more progress by any
-					future date. To correctly model Brooks' Law, the model must at the
-					very minimum have some conditions under which hiring new staff would
-					slow progress and cause a late project even later. One important
-					factor not taken into consideration was the time taken by senior staff
-					to train junior staff, which we will incorporate into the next
-					iteration of this model.
-  	\end{atomize}
+		\item Reality:
+			\begin{atomize}
+				\item This model does not model Brooks' Law under any conditions.
+				Hiring new staff with always be more a more effective strategy, no
+				matter how soon the deadline is. Brooks' Law predicts that hiring
+				new staff is a less effective strategy with a sufficently close
+				deadline.  At the very minimum, the model must have some conditions
+				under which hiring new staff would slow progress and thus, cause a
+				late project to be even later. One important factor not taken into
+				consideration was the time taken by senior staff to train junior
+				staff, which we will incorporate into the next iteration of this
+				model.
+			\end{atomize}
   \end{atomize}
 
 \section*{Case II: extends Case I}
