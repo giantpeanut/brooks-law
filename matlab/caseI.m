@@ -43,5 +43,8 @@ legend(labels, 'FontSize', fontsize, 'Location', ...
 'SouthEast');
 legend boxoff
 
+set(0,'CurrentFigure',f)
+set(gcf,'PaperPositionMode','auto')
+set(f, 'Position', [0 0 900 900])
 mkdir('..','images');
 saveas(f, '../images/caseI.png');
