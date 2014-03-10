@@ -11,7 +11,6 @@
 % line spacing
 \usepackage{setspace}
 \singlespacing
-
 \usepackage[fleqn]{amsmath}
 
 % images
@@ -228,8 +227,13 @@ for the project.
 
     \item Quantities:
       \begin{itemize}
+<<<<<<< HEAD
+        \item [$l$]: rate at which junior staff inhibits the senior staff
+        ability to contribute progress.
+=======
         \item [$\ell$]: rate at which junior staff inhibits the senior staff
         ability to contribute progress
+>>>>>>> a3a9714b87acb37a2e7ab926c3f91b661853e4cd
       \end{itemize}
 
     \item Conditions:
@@ -239,9 +243,9 @@ for the project.
 
     \item Model:
       \begin{atomize}
-        \item $x\prime = r - s$
-        \item $y\prime = sx$
-        \item $p\prime = ky - lx$
+        \item $x^{\prime} = r - s$
+        \item $y^{\prime} = sx$
+        \item $p^{\prime} = ky - lx$
       \end{atomize}
 
     \item Interpret:
@@ -310,5 +314,57 @@ for the project.
 
   \end{atomize}
 
+	\section*{Case III}
+		\begin{atomize}
+			\item Assumptions:
+				\begin{itemize}
+					\item As the project progresses, which means getting bigger, it will be harder to add more progress on to it. So the rate of progress is porportional to the progress that is already made. So we have the following equations.
+			\end{itemize}
+
+			\item Model:
+				\begin{itemize}
+					\item $x^{\prime} = r - s $
+					\item $y^{\prime} = sx $
+					\item $p^{\prime} = ky-lx-mp $
+				\end{itemize}
+
+			\item Nondimensionalizing:
+				\begin{itemize}
+					\item Set:
+							\begin{itemize}
+								\item $x = \alpha X $ 
+								\item $y = \beta Y $
+								\item $p = \gamma P $
+								\item $t = \tau T $
+							\end{itemize}
+					\item Transformed: $\prime  denotes  \frac{d}{d\tau} $
+							\begin{itemize}
+								\item $X^{\prime} = \frac{T}{\alpha} (r-s) $
+								\item $Y^{\prime} = \frac{T}{\beta} s \alpha X $
+								\item $P^{\prime} = \frac{T}{\gamma} (k \beta Y - l \alpha X - m \gamma P) $
+							\end{itemize}
+
+					\item Finalize: setting $\alpha = \beta = \gamma = T = \frac{1}{k} $
+							\begin{itemize}
+								\item $X^{\prime} = r - s $
+								\item $Y^{\prime} = \frac{s}{k} X $
+								\item $P^{\prime} = Y - \frac{m}{k} P - \frac{l}{k} X  $ 	
+							\end{itemize}
+				\end{itemize}
+			
+		\end{atomize}
+
+  \section*{Case III: complicated Case}
+  	\begin{atomize}
+  		\item Assumptions:
+  			\begin{itemize}
+    			\item A firm is like a minimized ecosystem, where resources are limited. So it is reasonable that junior staff are increasing in a logistic model. Junior staff numbers follow the equations below. \\ $x^{\prime} = rx(1-\frac{X+Y}{K}) - s$
+    			
+          \item Keeping the number of the Senior staff the same as Case II. $y^{\prime} = s$
+
+    			\item For the progress contribution part,let us keep the part in Case II, $ky-lx$. Optimisism could be a destructive blow to the project. This optimism is porportional to the total number of staff. Also, as deadline approaches, the remaining time and work amount also plays an important part in the staff's contribution. The closer the deadline is, or the more remaining work that is remaining, the more stressful the staffs will be, and they will contribute less to the project. By taking all these into account, we get the equation: \\
+    				$p^{\prime} = ky-lx-o(x+y)-d*\lvert\frac{p-p_{d}}{t-t_{d}}\rvert$
+  			\end{itemize}
+  	\end{atomize}
 \end{document}
 
