@@ -52,6 +52,8 @@ for p = 1:length(gammas)
   PsiDoublePrime0 = gammas(p);
   subplot(sp(p));
   labels = cell(length(betas), 1);
+  labels{1} = sprintf('\\gamma = 0.00 \\beta = 0.00');
+
   for q = 1:length(betas)
     ic = [PsiDoublePrime0 PsiPrime0 Psi0];
     ode = @(t, Psi) [ 
@@ -64,7 +66,7 @@ for p = 1:length(gammas)
     
     plot(t, Psi(:,3), 'LineSmoothing', 'on');
 
-    labels{q} = sprintf('\\gamma = %.2f, \\beta = %.2f', ...
+    labels{q+1} = sprintf('\\gamma = %.2f, \\beta = %.2f', ...
     gammas(p),betas(q));
   end
   legend(labels, 'FontSize', fontsize, 'Location', ...
