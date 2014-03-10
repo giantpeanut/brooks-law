@@ -138,7 +138,7 @@ for the project.
     \item Conditions:
       \begin{align*}
         &x_{0} = 0 \\[6pt]
-        &r > s
+        &r \geq s
       \end{align*}
 
     \item Model:
@@ -177,10 +177,14 @@ for the project.
             \Psi^{\prime} &= \Phi
           \end{align*}
 
+        \item Let
+          \begin{align*}
+            &\alpha = \frac{s}{k}(r-s), \alpha \geq 0
+          \end{align*}
+
         \item Solving in terms of $\Psi$:
           \begin{align*}
-            &\beta = \frac{s}{k}(r-s), \beta \geq 0 \\[6pt]
-            &\Psi^{\prime\prime\prime} = \beta \\[6pt]
+            &\Psi^{\prime\prime\prime} = \alpha \\[6pt]
             &\Psi^{\prime\prime}(0) = \Xi_{0} = \frac{x_{0}}{\xi} = 0 \\[6pt]
             &\Psi^{\prime}(0) = \Phi_{0} \\[6pt]
             &\Psi(0) = \Psi_{0}
@@ -224,9 +228,14 @@ for the project.
 
     \item Quantities:
       \begin{itemize}
-        \item [$l$]: rate at which junior staff inhibits the senior staff
+        \item [$\ell$]: rate at which junior staff inhibits the senior staff
         ability to contribute progress
       \end{itemize}
+
+    \item Conditions:
+      \begin{atomize}
+        \item $\ell \leq r$
+      \end{atomize}
 
     \item Model:
       \begin{atomize}
@@ -235,22 +244,70 @@ for the project.
         \item $p\prime = ky - lx$
       \end{atomize}
 
-    \item Solution:
+    \item Interpret:
       \begin{atomize}
-        \item $x = \left(r - s\right)t + x_{0}$
-        \item $y = \frac{1}{2}s\left(r - s\right)t^{2} + sx_{0}t+y_{0}$
-        \item $p = \frac{1}{6}ks(r-s)t^{3} + \frac{1}{2}ksx_{0}t^{2} + ky_{0}t -
-        \frac{1}{2}l(r-s)t^{2} - lx_{0}t  + p_{0} $
+        \item Let
+          \begin{align*}
+            &t = \tau \Tau \\[6pt]
+            &x = \xi\Xi \\[6pt]
+            &y = \phi\Phi \\[6pt]
+            &p = \psi\Psi
+          \end{align*}
+
+        \item Nondimensionalized, the model becomes:
+          \begin{align*}
+            \Xi^{\prime} &= \frac{\tau}{\xi}(r - s) \\[6pt]
+            \Phi^{\prime} &= \frac{s\tau\xi}{\phi}\Xi \\[6pt]
+            \Psi^{\prime} &= \frac{k\phi\tau}{\psi}\Phi - 
+              \frac{\ell\xi\tau}{\psi}\Xi
+          \end{align*}
+
+        \item Let
+          \begin{align*}
+            \tau = \xi = \phi = \psi = \frac{1}{k}
+          \end{align*}
+          
+        \item After substituting:
+          \begin{align*}
+            \Xi^{\prime} &= r - s \\[6pt]
+            \Phi^{\prime} &= \frac{s}{k}\Xi \\[6pt]
+            \Psi^{\prime} &= \Phi - \frac{\ell}{k}\Xi
+          \end{align*}
+
+        \item Solving in terms of $\Psi$:
+          \begin{align*}
+            &\Psi^{\prime} = \Phi - \frac{\ell}{k}\Xi \\[6pt]
+            &\Psi^{\prime\prime} = \Phi^{\prime} - \frac{\ell}{k}\Xi^{\prime} 
+            = \frac{s}{k}\Xi - \frac{\ell}{k}(r - s) \\[6pt]
+            &\Psi^{\prime\prime\prime} = \frac{s}{k}\Xi^{\prime} = 
+            \frac{s}{k}(r - s) \\[6pt]
+          \end{align*}
+
+        \item Let
+          \begin{align*}
+            &\alpha = \frac{1}{k}(r-s), \alpha \geq 0 \\[6pt]
+            &\beta = s\alpha, \beta \geq 0 \\[6pt]
+            &\gamma = -\ell\alpha, \gamma \leq 0
+          \end{align*}
+
+        \item Now, in terms of $\Psi^{\prime\prime\prime}$:
+          \begin{align*}
+            &\Psi^{\prime\prime\prime} = \beta \\[6pt]
+            &\Psi^{\prime\prime}(0) = \frac{s}{k}\Xi_{0} + \gamma = 
+              \frac{x_{0}}{\xi} + \gamma = \gamma \\[6pt]
+            &\Psi^{\prime}(0) = \Phi_{0} \\[6pt]
+            &\Psi(0) = \Psi_{0}
+          \end{align*}
+        \item $\Psi$ is nondimensionalized progress.
+        \item 
+          \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{caseII}
+          \end{figure}
       \end{atomize}
 
-    \item Interpret:
-      \begin{itemize}
-        \item Using the analysis above, if we try to find the intersecting point
-        of the curve $s=0$ and $s\neq0$, we find that
-        t=$\frac{31r-31s-3ksx_{0}\pm\sqrt{481(krs-ks^2)x_{0} +
-        (-31r+31s+3ksx_{0})^2}}{2(krs-ks^2)}$. 
-        \item We see that t is .... Oh god do this later...
-      \end{itemize}
+    \item Reality:
+
   \end{atomize}
 
 \end{document}

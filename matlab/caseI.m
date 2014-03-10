@@ -8,12 +8,12 @@ td = 20;
 Xi0 = 0;
 Phi0 = 1;
 Psi0 = 0;
-betas = 0:0.25:2;
+alphas = 0:0.25:2;
 
 % Curves
 tspan = t0:0.01:td; % 30 days
 ic = [Xi0 Phi0 Psi0];
-curves = length(betas);
+curves = length(alphas);
 
 % Figure
 f = figure;
@@ -29,13 +29,13 @@ labels = cell(curves, 1);
 % Plot Curves
 for p = 1:curves;
 	ode = @(t, Psi) [ 
-		betas(p);
+		alphas(p);
 		Psi(1);
 		Psi(2);
 	];
 	[t, Psi] = ode45(ode, tspan, ic);
 	plot(t, Psi(:,3), 'LineSmoothing', 'on');
-	labels{p} = sprintf('\\beta = %.2f', betas(p));
+	labels{p} = sprintf('\\alpha = %.2f', alphas(p));
 end
 
 % Legend
