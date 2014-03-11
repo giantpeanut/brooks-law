@@ -55,7 +55,7 @@
 \maketitle
 
 \section*{Abstract}
-According to Brooks' Law, "adding manpower to a late software project makes it
+According to Brooks' law, "adding manpower to a late software project makes it
 later". Brooks' law originated from Fred Brooks' 1975 book, "The Mythical
 Man-Month", and has since become commonly accepted through out the software
 development community. 
@@ -198,12 +198,12 @@ for the project.
           \end{align*}
 
         \item $\Psi$ is nondimensionalized progress. Since both stategies start
-        out with the same intial conditions, $\Psi^{\prime\prime\prime}$ is only
-        factor that differentiates the two strategies.  With hiring
+        out with the same intial conditions, $\Psi^{\prime\prime\prime}$ 
+        is only factor that differentiates the two strategies.  With hiring
         $\Psi^{\prime\prime\prime} > 0$, meaning that the rate of progress will
         increase and without hiring $\Psi^{\prime\prime\prime} = 0$, meaning
-        that progress will continue at the same constant rate. Thus, hiring will
-        always be more effective than not hiring. 
+        that progress will continue at the same constant rate. Thus, hiring
+        will always be more effective than not hiring. 
         \item 
           \begin{figure}[H]
             \centering
@@ -213,9 +213,9 @@ for the project.
 
     \item Reality:
       \begin{atomize}
-        \item This model does not model Brooks' Law under any conditions.
+        \item This model does not model Brooks' law under any conditions.
         Hiring new staff with always be more a more effective strategy, no
-        matter how soon the deadline is. Brooks' Law predicts that hiring
+        matter how soon the deadline is. Brooks' law predicts that hiring
         new staff is a less effective strategy with a sufficently close
         deadline.  At the very minimum, the model must have some conditions
         under which hiring new staff would slow progress and thus, cause a
@@ -242,7 +242,7 @@ for the project.
 
     \item Conditions:
       \begin{atomize}
-        \item $\ell \leq r$
+        \item $\ell \geq 0$
       \end{atomize}
 
     \item Model:
@@ -307,14 +307,14 @@ for the project.
             &\Psi(0) = \Psi_{0}
           \end{align*}
 
-        \item $\Psi$ is nondimensionalized progress. This time we have two
-        parameters to consider. Since both of these are a combination of our
-        physical parameters, we can't confidently attribute any of the effects
-        that we see to a specific parameters, but it does however allow us to
-        clearly see that there are conditions under which brooks law is true.
-        When ever $\gamma < 0$ we see $\Psi$ dip slightly below the non-hiring
-        case (when $\gamma = \beta = 0$).
-
+        \item $\Psi$ is nondimensionalized progress. This time we have
+        two parameters to consider. Since both of these are a combination of
+        our physical parameters, we can't confidently attribute any of the 
+        effects that we see to a specific parameters, but it does however 
+        allow us to clearly see that there are conditions under which brooks 
+        law is true. When ever $\gamma < 0$ we see $\Psi$ dip slightly below 
+        the non-hiring case (when $\gamma = \beta = 0$).
+        
         \item 
           \begin{figure}[H]
             \centering
@@ -365,19 +365,45 @@ for the project.
             - \frac{1}{2}\ell(r - s)\right) &< 0 \\[6pt]
             \frac{1}{6}ks(r - s)t_{d}
             &< \frac{1}{2}\ell(r - s) \\[6pt]
-            t_{d}
-            &< \frac{3\ell}{ks} \\[6pt]
+            t_{d} &< \frac{3\ell}{ks} \\[6pt]
           \end{align*}
 
       \end{atomize}
 
     \item Reality:
       \begin{atomize}
-          \item This does model brooks law under certain conditions. It is 
-          true that when it takes the senior staff valuable time to get them
-          up to speed on the project, the project may begin to progress more
-          slowly or even cause a temporary set back. ....
+        \item This model has the potential to model brooks law, because there
+          are conditions under which Brooks' law holds true, specifically it
+          holds true when $t_{d} < \frac{3\ell}{ks}$.
 
+          \item This infers a few interesting relationships about the 
+          break-even deadline (when $t_{d} = \frac{3\ell}{ks}$), that it is:
+            \begin{itemize}
+              \item directly proportional rate at which junior staff inhibits
+              progress
+              \item inversely proportional to the rate at which senior
+              staff contribute progress
+              \item inversely proportional to the rate at which junior
+              staff becomes senior staff
+            \end{itemize}
+          These relationships can be explained by the fact that all of these 
+          rates are constant and that:
+            \begin{itemize}
+              \item junior staff inhibiting progress should set the break-even
+              deadline farther into the future, and that if they don't inhibit
+              progress($\ell = 0$), the break-even point is essentially the
+              present ($t_{0}$).
+              \item increasing senior productive should set the break-deadline
+              closer to the present ($t_{0}$).
+              \item increasing senior staff should also set the break-deadline
+              closer to the present ($t_{0}$).
+            \end{itemize}
+
+          Although this model the effect described by Brooks' law, it doesn't
+          model a real software development project. One of the more obvious
+          flaw of the model is that it is unreasonable to assume that the rate
+          progress will contiue increase without bound.
+                    
           We still have not taken into account the fact that a project will
           generally become more complex as it increases in size. For example,
           working on a project with one hundred lines of code and one with over
@@ -389,7 +415,7 @@ for the project.
           mention the lengthier time it would take to debug. Of course there 
           are other factors affecting a projects complexity, but we will start
           simply, by considering the effects of project size in our next case.
-          \end{atomize}
+      \end{atomize}
 
   \end{atomize}
 
