@@ -103,9 +103,9 @@ for the project.
   
     \item Model:
       \begin{align*}
-        &x\prime = f\left(x, y, p, t\right) \\[6pt]
-        &y\prime = g\left(x, y, p, t\right) \\[6pt]
-        &p\prime = h\left(x, y, p, t\right)
+        &x^{\prime} = f\left(x, y, p, t\right) \\[6pt]
+        &y^{\prime} = g\left(x, y, p, t\right) \\[6pt]
+        &p^{\prime} = h\left(x, y, p, t\right)
       \end{align*}
   \end{atomize}
 
@@ -142,9 +142,9 @@ for the project.
 
     \item Model:
       \begin{align*}
-        &x\prime = r - s \\[6pt]
-        &y\prime = sx \\[6pt]
-        &p\prime = ky
+        &x^{\prime} = r - s \\[6pt]
+        &y^{\prime} = sx \\[6pt]
+        &p^{\prime} = ky
       \end{align*}
 
     \item Interpret:
@@ -246,11 +246,11 @@ for the project.
       \end{atomize}
 
     \item Model:
-      \begin{atomize}
-        \item $x^{\prime} = r - s$
-        \item $y^{\prime} = sx$
-        \item $p^{\prime} = ky - lx$
-      \end{atomize}
+      \begin{align*}
+        &x^{\prime} = r - s \\[6pt]
+        &y^{\prime} = sx \\[6pt]
+        &p^{\prime} = ky - lx
+      \end{align*}
 
     \item Interpret:
       \begin{atomize}
@@ -306,14 +306,69 @@ for the project.
             &\Psi^{\prime}(0) = \Phi_{0} \\[6pt]
             &\Psi(0) = \Psi_{0}
           \end{align*}
-        \item $\Psi$ is nondimensionalized progress. The figure where 
-        $\gamma = 0$ is essentialy Case I. $\gamma$ represents the negitive 
-        influence that .....
+
+        \item $\Psi$ is nondimensionalized progress. This time we have two
+        parameters to consider. Since both of these are a combination of our
+        physical parameters, we can't confidently attribute any of the effects
+        that we see to a specific parameters, but it does however allow us to
+        clearly see that there are conditions under which brooks law is true.
+        When ever $\gamma < 0$ we see $\Psi$ dip slightly below the non-hiring
+        case (when $\gamma = \beta = 0$).
+
         \item 
           \begin{figure}[H]
             \centering
             \includegraphics[width=\textwidth]{caseII}
           \end{figure}
+
+        \item To find the conditions under which this case obeys Brooks's law,
+        we want to find some relationship between the physical
+        parameters that will cause the late project to be later, which
+        happends mathematically when $p_{j}(t_{d}) < p_{s}(t_{d})$.
+
+        \item First, let's find $p(t)$
+          \begin{align*}
+            x^{\prime} &= r - s \\[6pt]
+            \int^{t}_{t_{0}} x^{\prime} dt &= (r - s)\int^{t}_{t_{0}}dt \\[6pt]
+            x(t) &= (r - s)t \\[6pt]
+            \\[3pt]
+            y^{\prime} &= sx \\[6pt]
+            y^{\prime} &= s(r - s)t \\[6pt]
+            \int^{t}_{t_{0}} y^{\prime} dt &= s(r - s)\int^{t}_{t_{0}} t dt
+            \\[6pt]
+            y(t) &= \frac{1}{2}s(r - s)t^{2} + y_{0}\\[6pt]
+            \\[3pt]
+            p^{\prime} &= ky - {\ell}x \\[6pt]
+            p^{\prime} &= k\left(\frac{1}{2}s(r - s)t^{2} + y_{0}\right) 
+            - \ell(r - s)t \\[6pt]
+            \int^{t}_{t_{0}} p^{\prime} dt &= \int^{t}_{t_{0}}
+            \left(\frac{ks}{2}(r - s)t^{2} - \ell(r - s)t + ky_{0}\right)
+            dt \\[6pt]
+            p(t) &= \frac{1}{6}ks(r - s)t^{3} - \frac{1}{2}\ell(r - s)t^{2} 
+            + ky_{0}t  + p_{0}
+          \end{align*}
+
+        \item Now, $p_{s}(t_{d})$ and $p_{j}(t_{d})$
+          \begin{align*}
+            p_{s}(t_{d}) &= ky_{0}t_{d}  + p_{0} \\[6pt]
+            p_{j}(t_{d}) &= \frac{1}{6}ks(r - s)t_{d}^{3} 
+            - \frac{1}{2}\ell(r - s)t_{d}^{2} + ky_{0}t_{d}  + p_{0}
+          \end{align*}
+
+        \item Finally set $p_{j}(t_{d}) < p_{s}(t_{d})$, where 
+        $t_{d} > t_{0} = 0$
+          \begin{align*}
+            p_{j}(t_{d}) &< p_{s}(t_{d}) \\[6pt]
+            \frac{1}{6}ks(r - s)t_{d}^{3} - \frac{1}{2}\ell(r - s)t_{d}^{2}
+            + ky_{0}t_{d}  + p_{0} &< ky_{0}t_{d} + p_{0} \\[6pt]
+            t_{d}^{2}\left(\frac{1}{6}ks(r - s)t_{d}
+            - \frac{1}{2}\ell(r - s)\right) &< 0 \\[6pt]
+            \frac{1}{6}ks(r - s)t_{d}
+            &< \frac{1}{2}\ell(r - s) \\[6pt]
+            t_{d}
+            &< \frac{3\ell}{ks} \\[6pt]
+          \end{align*}
+
       \end{atomize}
 
     \item Reality:
