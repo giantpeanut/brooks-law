@@ -427,35 +427,62 @@ for the project.
 			\end{itemize}
 
 			\item Model:
-				\begin{itemize}
+				\begin{atomize}
 					\item $x^{\prime} = r - s $
 					\item $y^{\prime} = sx $
 					\item $p^{\prime} = ky-lx-mp $
-				\end{itemize}
+				\end{atomize}
 
 			\item Nondimensionalizing:
-				\begin{itemize}
+				\begin{atomize}
 					\item Set:
-							\begin{itemize}
+							\begin{atomize}
 								\item $x = \alpha X $ 
 								\item $y = \beta Y $
 								\item $p = \gamma P $
 								\item $t = \tau T $
-							\end{itemize}
+							\end{atomize}
 					\item Transformed: $\prime  denotes  \frac{d}{d\tau} $
-							\begin{itemize}
+							\begin{atomize}
 								\item $X^{\prime} = \frac{T}{\alpha} (r-s) $
 								\item $Y^{\prime} = \frac{T}{\beta} s \alpha X $
 								\item $P^{\prime} = \frac{T}{\gamma} (k \beta Y - l \alpha X - m \gamma P) $
-							\end{itemize}
+							\end{atomize}
 
 					\item Finalize: setting $\alpha = \beta = \gamma = T = \frac{1}{k} $
-							\begin{itemize}
+							\begin{atomize}
 								\item $X^{\prime} = r - s $
 								\item $Y^{\prime} = \frac{s}{k} X $
 								\item $P^{\prime} = Y - \frac{m}{k} P - \frac{l}{k} X  $ 	
-							\end{itemize}
-				\end{itemize}
+							\end{atomize}
+
+					\item Solving: 
+							\begin{atomize}
+								\item $X = (r-s)\tau + X_{0}$
+								\item $Y = \frac{s(r-s)}{2k}\tau^{2} + \frac{s}{k}X_{0}\tau + Y_{0}$
+								\item I assume that $k = 30; l = 10; m = 14; X_{0} = 0; Y_{0} = 3$ 
+                \item Case 1 is when the firm is not hiring new staffs $(r = s = 0)$
+                \item Case 2 is when the firm hires new staffs and half of the staffs turn to senior $(r=10; s=5)$
+                \item We got the following graph:
+							\end{atomize}
+ 		       \item 
+    		      \begin{figure}[H]
+        	    \centering
+          	  \includegraphics[width=\textwidth]{caseIII}
+         	 \end{figure}
+
+          \item Interpretation:
+            \begin{itemize}
+              \item This is exactly what brooks law is showing, that the new staffs will actually slow down the overall progress. We can see that the before the intersection, the progress is lower. That signifies that junior staffs are still adjusting to the new environment, and senior staffs are sacrifising their output to coach the junior staffs. 
+
+              \item This also captures the fact that when the firm is not hiring new staffs, the bigger size the project is, the slower the project progresses. This is an improvement from previous model.
+
+              \item Unfortunately, in the case when the firm is hiring new staffs, this model does not capture the fact that the bigger the project, the slower the project should progress. In the graph, the project just spike up faster and faster. We believe that is because that the number of staffs is not bounded in the assumption. So even with a giant m (damping factor of the size of the project), we still only get the green line when $m=400$, which is going to spike up like the red line given enongh amount of time. 
+
+            \end{itemize}
+
+
+				\end{atomize}
 			
 		\end{atomize}
 
