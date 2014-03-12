@@ -29,6 +29,7 @@ m = 14;
 X0 = 0;
 Y0 = 3;
 
+
 ode1 = @(t,y) [(r-s); (s/k)*y(1); y(2)-(m/k)*y(3)-(l/k)*y(1)];
 [tout,yout] = ode45(ode1,tspan,[X0,Y0,0]);
 plot(tout,yout(:,3),'r-');
@@ -44,6 +45,7 @@ m = 300;
 
 ode1 = @(t,y) [(r-s); (s/k)*y(1); y(2)-(m/k)*y(3)-(l/k)*y(1)];
 [tout,yout] = ode45(ode1,tspan,[X0,Y0,0]);
+axis([0 tspan(end) 0 14]);
 plot(tout,yout(:,3),'g-');
 
 title('Nondimensionalized Progress vs Time','Fontsize',25);

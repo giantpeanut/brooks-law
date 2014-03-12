@@ -30,7 +30,7 @@
 
 % new list environment for lists with no labels
 % documentation on how this works at:
-%     run `texdoc source2e`
+%     run `exdoc source2e`
 %     look at section about lists on page 218 
 \newenvironment{atomize}
     {\begin{list} {} {
@@ -81,9 +81,9 @@ for the project.
   \begin{atomize}
     \item Assumptions:
       \begin{itemize}
-        \item Brooks' law can be modelled as the relationships between
+        \item Brooks' law can be modeled as the relationships between
         time, junior staff, senior staff, and progress.
-        \item The relationships between these quantites can be modelled
+        \item The relationships between these quantities can be modeled
         as a system of first order differential equations.
         \item Any of these quantities could effect any other quantity besides
         time.  
@@ -197,8 +197,8 @@ for the project.
             &\Psi(0) = \Psi_{0}
           \end{align*}
 
-        \item $\Psi$ is nondimensionalized progress. Since both stategies start
-        out with the same intial conditions, $\Psi^{\prime\prime\prime}$ 
+        \item $\Psi$ is nondimensionalized progress. Since both strategies start
+        out with the same initial conditions, $\Psi^{\prime\prime\prime}$ 
         is only factor that differentiates the two strategies.  With hiring
         $\Psi^{\prime\prime\prime} > 0$, meaning that the rate of progress will
         increase and without hiring $\Psi^{\prime\prime\prime} = 0$, meaning
@@ -216,7 +216,7 @@ for the project.
         \item This model does not model Brooks' law under any conditions.
         Hiring new staff with always be more a more effective strategy, no
         matter how soon the deadline is. Brooks' law predicts that hiring
-        new staff is a less effective strategy with a sufficently close
+        new staff is a less effective strategy with a sufficiently close
         deadline.  At the very minimum, the model must have some conditions
         under which hiring new staff would slow progress and thus, cause a
         late project to be even later. One important factor not taken into
@@ -324,7 +324,7 @@ for the project.
         \item To find the conditions under which this case obeys Brooks's law,
         we want to find some relationship between the physical
         parameters that will cause the late project to be later, which
-        happends mathematically when $p_{j}(t_{d}) < p_{s}(t_{d})$.
+        happens mathematically when $p_{j}(t_{d}) < p_{s}(t_{d})$.
 
         \item First, let's find $p(t)$
           \begin{align*}
@@ -402,7 +402,7 @@ for the project.
           Although this model the effect described by Brooks' law, it doesn't
           model a real software development project. One of the more obvious
           flaw of the model is that it is unreasonable to assume that the rate
-          progress will contiue increase without bound.
+          progress will continue increase without bound.
                     
           We still have not taken into account the fact that a project will
           generally become more complex as it increases in size. For example,
@@ -423,7 +423,7 @@ for the project.
 		\begin{atomize}
 			\item Assumptions:
 				\begin{itemize}
-					\item As the project progresses, which means getting bigger, it will be harder to add more progress on to it. So the rate of progress is porportional to the progress that is already made. So we have the following equations.
+					\item As the project progresses, which means getting bigger, it will be harder to add more progress on to it. So the rate of progress is proportional to the progress that is already made. So we have the following equations.
 			\end{itemize}
 
 			\item Model:
@@ -461,8 +461,8 @@ for the project.
 								\item $X = (r-s)\tau + X_{0}$
 								\item $Y = \frac{s(r-s)}{2k}\tau^{2} + \frac{s}{k}X_{0}\tau + Y_{0}$
 								\item I assume that $k = 30; l = 10; m = 14; X_{0} = 0; Y_{0} = 3$ 
-                \item Case 1 is when the firm is not hiring new staffs $(r = s = 0)$
-                \item Case 2 is when the firm hires new staffs and half of the staffs turn to senior $(r=10; s=5)$
+                \item Case 1 is when the firm is not hiring new staff $(r = s = 0)$
+                \item Case 2 is when the firm hires new staff and half of the junior staff turn to senior staff $(r=10; s=5)$
                 \item We got the following graph:
 							\end{atomize}
  		       \item 
@@ -473,11 +473,11 @@ for the project.
 
           \item Interpretation:
             \begin{itemize}
-              \item This is exactly what brooks law is showing, that the new staffs will actually slow down the overall progress. We can see that the before the intersection, the progress is lower. That signifies that junior staffs are still adjusting to the new environment, and senior staffs are sacrifising their output to coach the junior staffs. 
+              \item This is exactly what brooks law is showing, that the new staff will actually slow down the overall progress. We can see that the before the intersection, the progress is lower. That signifies that junior staff are still adjusting to the new environment, and senior staff are sacrifising their output to coach the junior staff. 
 
-              \item This also captures the fact that when the firm is not hiring new staffs, the bigger size the project is, the slower the project progresses. This is an improvement from previous model.
+              \item This also captures the fact that when the firm is not hiring new staff, the bigger size the project is, the slower the project progresses. This is an improvement from previous model.
 
-              \item Unfortunately, in the case when the firm is hiring new staffs, this model does not capture the fact that the bigger the project, the slower the project should progress. In the graph, the project just spike up faster and faster. We believe that is because that the number of staffs is not bounded in the assumption. So even with a giant m (damping factor of the size of the project), we still only get the green line when $m=400$, which is going to spike up like the red line given enongh amount of time. 
+              \item Unfortunately, in the case when the firm is hiring new staff, this model does not capture the fact that the bigger the project, the slower the project should progress. In the graph, the project just spike up faster and faster. We believe that is because that the number of staff is not bounded in the assumption. So even with a large m (damping factor of the size of the project), we still only get the green line when $m=400$, which is going to spike up like the red line given enough amount of time. 
 
             \end{itemize}
 
@@ -486,17 +486,7 @@ for the project.
 			
 		\end{atomize}
 
-  \section*{Case III: complicated Case}
-  	\begin{atomize}
-  		\item Assumptions:
-  			\begin{itemize}
-    			\item A firm is like a minimized ecosystem, where resources are limited. So it is reasonable that junior staff are increasing in a logistic model. Junior staff numbers follow the equations below. \\ $x^{\prime} = rx(1-\frac{X+Y}{K}) - s$
-    			
-          \item Keeping the number of the Senior staff the same as Case II. $y^{\prime} = s$
-
-    			\item For the progress contribution part,let us keep the part in Case II, $ky-lx$. Optimisism could be a destructive blow to the project. This optimism is porportional to the total number of staff. Also, as deadline approaches, the remaining time and work amount also plays an important part in the staff's contribution. The closer the deadline is, or the more remaining work that is remaining, the more stressful the staffs will be, and they will contribute less to the project. By taking all these into account, we get the equation: \\
-    				$p^{\prime} = ky-lx-o(x+y)-d*\lvert\frac{p-p_{d}}{t-t_{d}}\rvert$
-  			\end{itemize}
-  	\end{atomize}
+  \section*{Conclusion}
+		
 \end{document}
 
