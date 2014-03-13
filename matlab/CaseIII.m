@@ -49,7 +49,7 @@ axis([0 tspan(end) 0 14]);
 plot(tout,yout(:,3),'g-');
 
 title('Nondimensionalized Progress vs Time','Fontsize',25);
-ylabel('P','Fontsize',20);
+ylabel('\Psi','Fontsize',20);
 xlabel('\tau','Fontsize',20);
 legend('Case not hiring people','Case we are hiring people','Case m=300');
 
